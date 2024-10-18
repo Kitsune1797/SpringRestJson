@@ -35,7 +35,6 @@ public class jsonRetriever {
         RestTemplate restData = new RestTemplate();
         ResponseEntity<List> jsonContent = restData.getForEntity(requiredAPI, List.class);
         return jsonContent.getBody();
-
     }
 
 
