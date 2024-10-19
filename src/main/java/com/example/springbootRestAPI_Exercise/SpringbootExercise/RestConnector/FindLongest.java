@@ -9,23 +9,33 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-public class postLengthExpansion {
+public class FindLongest {
+    private String longestTitle = "";
+    private String longestTitleBody;
 
-    @RequestMapping("/des3")
-    public List<Map<String, Object>> getErrorJsonList() {
-        String requiredAPI = contentGet.getjson();
+
+    @RequestMapping("/des2")
+    public List<Map<String, Object>> getLongest() {
+        String requiredAPI = ContentGet.getjson();
         RestTemplate restData = new RestTemplate();
         ResponseEntity<List> jsonContent = restData.getForEntity(requiredAPI, List.class);
         List<Map<String, Object>> postContent = jsonContent.getBody();
-        calc_Length(postContent);
+
+        calc_Longest(postContent);
+
+        System.out.println("The Content with longest title is");
+        System.out.println("Title: " + longestTitle);
+        System.out.println("Body: " + longestTitleBody);
         return postContent;
     }
 
-    public void calc_Length(List<Map<String, Object>> jsonLContent) {
+    public void calc_Longest(List<Map<String, Object>> jsonLContent) {
         for (Map<String, Object> currPost : jsonLContent) {
             String currTitle = currPost.get("title").toString();
-            int currLength = currTitle.length();
-            currPost.put("titleLength", currLength);
+            if (currTitle.length() > longestTitle.length()) {
+                longestTitle = currTitle;
+                longestTitleBody = currPost.get("body").toString();
+            }
         }
     }
 }
