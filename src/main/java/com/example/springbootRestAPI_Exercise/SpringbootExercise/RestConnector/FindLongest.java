@@ -22,7 +22,7 @@ public class FindLongest {
     }
 
     @RequestMapping("/des2")
-    public List<Map<String, Object>> getLongest() {
+    public String getLongest() {
         String requiredAPI = ContentGet.getjson();
         RestTemplate restData = new RestTemplate();
         ResponseEntity<List> jsonContent = restData.getForEntity(requiredAPI, List.class);
@@ -30,10 +30,9 @@ public class FindLongest {
 
         calc_Longest(postContent);
 
-        System.out.println("The Content with longest title is");
-        System.out.println("Title: " + longestTitle);
-        System.out.println("Body: " + longestTitleBody);
-        return postContent;
+        String result = "<---Find Longest Title---> \nThe Content with longest title is \nTitle: " + longestTitle + " \nBody: " + longestTitleBody;
+        System.out.println(result);
+        return result;
     }
 
     public void calc_Longest(List<Map<String, Object>> jsonLContent) {
