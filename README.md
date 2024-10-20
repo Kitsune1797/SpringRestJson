@@ -71,7 +71,7 @@ The result can be viewed from both IDE and webpage, but IDE can display the resu
   http://localhost:8080/des1
   ```
   Screenshot of Task 1 result
-  ![Task 1](images/Task1.png)
+  ![Task 1](Images/Task1.png)
 
 
 - **Task 2- Find Longest Title**: Implements logic to identify and display the title and body of the post with the longest title in the console.
@@ -94,7 +94,7 @@ The result can be viewed from both IDE and webpage, but IDE can display the resu
   http://localhost:8080/des3
   ```
   Screenshot of Task 3 result (Compare with Task 1 result, you will notice a new field):
-  ![Task 3](images/Task3.png)
+  ![Task 3](Images/Task3.png)
 
 - **Task 4- Polymorphism Implementation**: Utilizes Abstract Class and Polymorphism to perform title comparison methods when identifying the longest title.
   
